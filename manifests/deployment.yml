@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: holamundo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: holamundo
+  template:
+    metadata:
+      labels:
+        app: holamundo 
+    spec:
+      containers:
+        - name: holamundo 
+          image: akskioskoregistry.azurecr.io/holamundo
+          ports:
+          - containerPort: 8080
